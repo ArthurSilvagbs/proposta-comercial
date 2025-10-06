@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contrato de Manutenção — CFTV, Controle de Acesso e Interfonia | Condomínio Vila Real</title>
+<style>
+  :root{
+    --brand:#0e7a4e;       /* Verde principal */
+    --brand-dark:#0a5a39;  /* Verde escuro */
+    --accent:#10b981;      /* Destaques */
+    --ink:#0b1220;
+    --muted:#5a6370;
+    --bg:#f7f9fb;
+    --card:#ffffff;
+    --stroke:#e7ecf2;
+    --warn:#c2410c;
+    --maintenance:#2563eb; /* Azul para manutenção */
+    --maintenance-light:#dbeafe;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:14.8px/1.55 "Segoe UI", Roboto, Helvetica, Arial, sans-serif}
+  .page{max-width:980px;margin:28px auto;padding:0 16px}
+  .card{background:var(--card);border:1px solid var(--stroke);border-radius:16px;box-shadow:0 3px 18px rgba(3,10,27,.06)}
+  header.hero{
+    background:linear-gradient(135deg,var(--brand) 0%, var(--brand-dark) 100%);
+    color:#fff;border-radius:18px;padding:28px 28px 20px;margin-bottom:18px;
+    position:relative;overflow:hidden
+  }
+  .ribbon{
+    position:absolute; right:-52px; top:24px; background:#fff; color:var(--brand-dark);
+    transform:rotate(16deg); padding:10px 56px; font-weight:700; letter-spacing:.5px; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.12)
+  }
+  .hero h1{margin:0 0 8px;font-size:28px;letter-spacing:.2px}
+  .hero p{margin:0;opacity:.95}
+  .grid{display:grid;gap:16px}
+  .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+  .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:8px 12px;border-radius:999px;font-weight:600;margin-top:8px}
+  .section{padding:16px 18px;margin-bottom:16px}
+  .section h2{margin:0 0 10px;font-size:18px;color:var(--brand-dark);letter-spacing:.2px}
+  .kpi{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--stroke);padding:14px;border-radius:12px;background:#fff}
+  .kpi svg{flex:0 0 24px}
+  .badge{
+    display:inline-block;background:var(--ink);color:#fff;padding:3px 10px;border-radius:999px;font-size:12px;margin-left:8px
+  }
+  .badge.maintenance{
+    background:var(--maintenance);color:#fff;
+  }
+  /* Destaque Manutenção */
+  .callout{
+    border:1px dashed var(--maintenance); background:linear-gradient(180deg,var(--maintenance-light), #ffffff 45%); padding:16px; border-radius:14px
+  }
+  .callout h3{margin:0 0 8px;font-size:16px;color:var(--maintenance)}
+  .callout p{margin:.2rem 0}
+  .callout .tag{display:inline-block;background:var(--accent);color:#053; padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px;margin-right:6px}
+  .req{display:flex;gap:10px;align-items:flex-start;margin-top:8px}
+  .req svg{margin-top:2px}
+  /* Tabela de serviços */
+  table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:14px;border:1px solid var(--stroke);background:#fff}
+  thead th{background:#f4f7f9;text-align:left;padding:10px 12px;color:#263043;border-bottom:1px solid var(--stroke);font-size:13px}
+  tbody td{padding:12px;border-bottom:1px solid var(--stroke);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  .num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .totalbar{
+    display:flex;justify-content:flex-end;gap:18px;align-items:center;margin-top:12px
+  }
+  .totalbar .total{
+    background:var(--brand);color:white;padding:12px 16px;border-radius:12px; font-size:16px; font-weight:800; letter-spacing:.3px; box-shadow:0 6px 18px rgba(14,122,78,.22)
+  }
+  .totalline{color:#1f2937;font-weight:700}
+  /* Informações comerciais */
+  .list{margin:8px 0 0 18px;padding:0}
+  .list li{margin:4px 0}
+  footer{
+    margin:18px 0 28px;color:var(--muted);font-size:12.5px;text-align:center
+  }
+  .brandbar{
+    display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px;border-bottom:1px solid var(--stroke)
+  }
+  .brandbar .who{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:56px;height:56px;border-radius:12px;background:#fff;border:2px solid rgba(255,255,255,.65);
+    display:grid;place-items:center;box-shadow:0 6px 22px rgba(0,0,0,.15)
+  }
+  .logo span{font-weight:900;color:#0c8b58}
+  .block{padding:0 16px 16px}
+  .muted{color:var(--muted)}
+  .hl{color:var(--brand-dark);font-weight:700}
+  .stamp{
+    border:2px solid var(--stroke);border-radius:14px;padding:12px 14px;background:#fff
+  }
+  .signbox{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px}
+  .line{height:1px;background:var(--stroke);margin:26px 0 6px}
+  .center{text-align:center}
+  .warn{color:var(--warn);font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{border:1px solid var(--stroke);padding:6px 10px;border-radius:999px;background:#fff;font-size:12.5px}
+  .chip.maintenance{border-color:var(--maintenance);background:var(--maintenance-light);color:var(--maintenance)}
+  .value-highlight{
+    background:linear-gradient(135deg,var(--brand) 0%, var(--brand-dark) 100%);
+    color:#fff;padding:20px;border-radius:16px;text-align:center;margin:16px 0;
+  }
+  .value-highlight .price{font-size:32px;font-weight:900;margin-bottom:8px}
+  .value-highlight .period{opacity:.9;font-size:14px}
+  /* Print tweaks */
+  @media print{
+  body{background:#fff}
+  .page{margin:0;max-width:100%;padding:0}
+  .card, .section, .callout{box-shadow:none}
+  .ribbon{display:none}
+  a[href]:after{content:""}
+  *{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero card">
+      <div class="ribbon">MANUTENÇÃO</div>
+      <div class="brandbar">
+        <div class="who">
+          <div class="logo"><img src="imagens/SSINOVATEC_Icon1.png" alt="Logo SS Inovatec" style="width:40px;height:40px;"></div>
+          <div>
+            <img src="imagens/SSinovatec_Logo2.png" alt="SS Inovatec" style="height:30px; margin-top: 5px;">
+            <div style="font-size:17px;opacity:.9">Contrato de Manutenção</div>
+          </div>
+        </div>
+        <div class="stamp" style="text-align: center;">
+          <div class="muted" style="font-size:12.5px; "><strong><br>Condomínio <br> Vila Real</strong></div>
+        </div>
+      </div>
+      <div class="block">
+        <h1>Contrato de Manutenção Preventiva e Corretiva</h1>
+        <p>Manutenção completa dos sistemas de CFTV, Controle de Acesso e Interfonia com visitas técnicas mensais, suporte remoto e cobertura corretiva inclusa.</p>
+        <div class="pill">🔧 Manutenção Especializada • 🛡️ Suporte Técnico • 📞 Atendimento Remoto</div>
+      </div>
+    </header>
+
+    <!-- Destaque Manutenção -->
+    <section class="section card">
+      <div class="callout">
+        <h3> Destaque — <span class="hl">Manutenção Preventiva Completa</span></h3>
+        <p class="muted">Garantia de funcionamento contínuo dos sistemas de segurança com visitas técnicas regulares e suporte especializado.</p>
+        <div class="grid cols-3" style="margin-top:8px">
+          <div class="kpi">
+            <!-- CFTV -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M2 8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8Z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M7 17l-2 2M17 17l2 2" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <div>
+              <div><strong>CFTV Completo</strong></div>
+              <div class="muted">Câmeras, cabeamento e gravadores</div>
+            </div>
+          </div>
+          <div class="kpi">
+            <!-- Controle de Acesso -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="16" r="1" fill="currentColor"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <div>
+              <div><strong>Controle de Acesso</strong></div>
+              <div class="muted">Leitores, controladoras e fechaduras</div>
+            </div>
+          </div>
+          <div class="kpi">
+            <!-- Interfonia -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H6Z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 14h8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 18h8" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <div>
+              <div><strong>Interfonia</strong></div>
+              <div class="muted">Terminais, centrais e cabeamento</div>
+            </div>
+          </div>
+        </div>
+        <div class="req">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          <div>
+            <span class="tag">Incluso no contrato</span>
+            <div><strong>Visitas mensais</strong> com 2 técnicos especializados + <strong>suporte remoto</strong> + <strong>cobertura corretiva</strong> de até R$ 500,00/mês.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Escopo dos Serviços -->
+    <section class="section grid cols-3">
+      <div class="card section">
+        <h2>🎥 CFTV</h2>
+        <ul class="list">
+          <li><strong>Cabeamento:</strong> Verificação de integridade e funcionalidade</li>
+          <li><strong>Câmeras:</strong> Limpeza, ajuste de foco e posicionamento</li>
+          <li><strong>Configuração:</strong> Otimização de gravadores e acesso remoto</li>
+          <li><strong>Prevenção:</strong> Identificação proativa de problemas</li>
+        </ul>
+        <div class="chips">
+          <span class="chip maintenance">Intelbras</span>
+          <span class="chip maintenance">Hikvision</span>
+          <span class="chip maintenance">Analógico/IP</span>
+        </div>
+      </div>
+      <div class="card section">
+        <h2>🔐 Controle de Acesso</h2>
+        <ul class="list">
+          <li><strong>Cabeamento:</strong> Infraestrutura de leitores e controladoras</li>
+          <li><strong>Equipamentos:</strong> Leitores biométricos e fechaduras</li>
+          <li><strong>Configuração:</strong> Cadastros, permissões e relatórios</li>
+          <li><strong>Prevenção:</strong> Continuidade de acesso e segurança</li>
+        </ul>
+        <div class="chips">
+          <span class="chip maintenance">Intelbras</span>
+          <span class="chip maintenance">Incontrol</span>
+          <span class="chip maintenance">Sistema IP</span>
+        </div>
+      </div>
+      <div class="card section">
+        <h2>📞 Interfonia</h2>
+        <ul class="list">
+          <li><strong>Cabeamento:</strong> Verificação de linhas analógicas</li>
+          <li><strong>Terminais:</strong> Teste e manutenção de interfones</li>
+          <li><strong>Quadro Geral:</strong> Organização e inspeção</li>
+          <li><strong>Centrais:</strong> Manutenção e configuração</li>
+        </ul>
+        <div class="chips">
+          <span class="chip maintenance">Sistema Analógico</span>
+          <span class="chip maintenance">Centrais</span>
+          <span class="chip maintenance">Terminais</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visitas Técnicas -->
+    <section class="section card">
+      <h2>Visitas Técnicas e Suporte</h2>
+      <div class="grid cols-2" style="margin-top:12px">
+        <div class="kpi">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div>
+            <div><strong>Frequência Mensal</strong></div>
+            <div class="muted">2 diárias por mês dedicadas ao condomínio</div>
+          </div>
+        </div>
+        <div class="kpi">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div>
+            <div><strong>2 Técnicos Especializados</strong></div>
+            <div class="muted">Profissionais certificados em cada visita</div>
+          </div>
+        </div>
+        <div class="kpi">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div>
+            <div><strong>Suporte Remoto</strong></div>
+            <div class="muted">Atendimento à distância para problemas urgentes</div>
+          </div>
+        </div>
+        <div class="kpi">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M3 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <div>
+            <div><strong>Cobertura Corretiva</strong></div>
+            <div class="muted">Até R$ 500,00/mês em manutenções corretivas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valor do Investimento -->
+    <section class="section card">
+      <h2>💰 Investimento Mensal</h2>
+      <div class="value-highlight">
+        <div class="price">R$ 2.699,00</div>
+        <div class="period">mensais</div>
+      </div>
+      <div class="grid cols-2" style="margin-top:16px">
+        <div>
+          <h3 style="margin:0 0 8px;color:var(--brand-dark)">✅ Incluso no Valor</h3>
+          <ul class="list">
+            <li>Visitas técnicas mensais (2 diárias)</li>
+            <li>2 técnicos especializados por visita</li>
+            <li>Suporte remoto ilimitado</li>
+            <li>Manutenção corretiva até R$ 500,00/mês</li>
+            <li>Relatórios técnicos detalhados</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin:0 0 8px;color:var(--brand-dark)">🎯 Condições Especiais</h3>
+          <ul class="list">
+            <li><strong>Assinatura Anual:</strong> Desconto especial disponível</li>
+            <li><strong>Pagamento:</strong> Mensal via boleto ou Pix</li>
+            <li><strong>Início:</strong> Imediato após assinatura</li>
+            <li><strong>Prazo:</strong> 12 meses (renovação automática)</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Melhor custo-benefício</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Condições Comerciais -->
+    <section class="section grid cols-2">
+      <div class="card section">
+        <h2>📋 Condições Contratuais</h2>
+        <ul class="list">
+          <li><strong>Validade da proposta:</strong> 15 dias corridos</li>
+          <li><strong>Forma de pagamento:</strong> Mensal (boleto/Pix)</li>
+          <li><strong>Prazo contratual:</strong> 12 meses renovável</li>
+          <li><strong>Aviso prévio:</strong> 30 dias para cancelamento</li>
+          <li><strong>Início dos serviços:</strong> Imediato após assinatura</li>
+        </ul>
+      </div>
+      <div class="card section">
+        <h2>🛡️ Garantias e Benefícios</h2>
+        <ul class="list">
+          <li><strong>Técnicos certificados:</strong> Profissionais qualificados</li>
+          <li><strong>Relatórios mensais:</strong> Documentação completa</li>
+          <li><strong>Atendimento prioritário:</strong> Suporte diferenciado</li>
+          <li><strong>Peças e materiais:</strong> Conforme necessidade (até R$ 500,00/mês)</li>
+          <li><strong>Garantia de serviço:</strong> Qualidade assegurada</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Assinaturas -->
+    <section class="section card">
+      <h2>Aprovação do Contrato</h2>
+      <div class="signbox">
+        <div>
+          <div class="line"></div>
+          <div class="center">Condomínio Vila Real</div>
+          <div class="center muted">Nome completo do fernando</div>
+        </div>
+        <div>
+          <div class="line"></div>
+          <div class="center">SS Inovatec</div>
+          <div class="center muted">Representante Técnico</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">Ao assinar, o condomínio declara ter lido e concordado com todos os termos, condições e valores apresentados neste contrato de manutenção.</p>
+    </section>
+
+    <footer>
+      SS Inovatec • Brasília – DF • CFTV | Controle de Acesso | Interfonia | Manutenção Especializada<br/>
+      Contato: (61) 3975-1445 • contato@ssinovatec.com.br • Atendimento 24h para emergências
+    </footer>
+  </div>
+</body>
+</html>
